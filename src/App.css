@@ -1,0 +1,110 @@
+body {
+  font-family: Arial, sans-serif;
+  background: whitesmoke;
+  margin: 0;
+  padding: 0;
+
+  /* Center everything */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.app {
+  width: 400px;
+  padding: 25px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 20px;
+  font-size: large;
+  color: #333;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin-bottom: 1px; /* reduced spacing */
+}
+
+.input-container label {
+  margin: 6px 0 3px;
+  font-size: 14px;
+  color: #444;
+  font-weight: bold;
+}
+
+.input-container input,
+.input-container select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+  transition: border 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  background-color: #fff;
+  color: #000;
+}
+
+.input-container input:focus,
+.input-container select:focus {
+  border: 1px solid #4a90e2;
+  box-shadow: 0 0 5px rgba(74, 144, 226, 0.5);
+}
+
+.error {
+  color: #f80000;
+  font-size: 12px;
+  margin-top: 3px;
+  line-height: 1.2;
+  min-height: 16px; /* ✅ keeps box height stable */
+}
+
+.required {
+  color: red;
+  margin-left: 3px;
+  font-weight: bold;
+}
+
+/* Button */
+.input-container button {
+  margin-top: 12px;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.input-container button:hover {
+  background-color: #0056b3;
+}
+
+.input-row {
+  display: flex;
+  gap: 15px; /* space between fields */
+}
+
+.input-row .input-container {
+  flex: 1; /* equal width inputs */
+}
+
+#gender {
+  background-color: #fff;
+  cursor: pointer;
+  color: #000;
+}
+
+#gender option {
+  padding: 8px;
+  background: #e9e9e9;
+  color: #000;
+}
