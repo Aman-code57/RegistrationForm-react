@@ -12,6 +12,8 @@ function App() {
   });
 
   const [errors, setErrors] = useState({});
+  const [termsAccepted, setTermsAccepted] = useState(false);
+  const [termsError, setTermsError] = useState("");
 
   const refs = {
     firstName: useRef(null),
@@ -115,6 +117,11 @@ function App() {
     validateField(name, newValue);
   };
 
+  const handleTermsChange = (e) => {
+    setTermsAccepted(e.target.checked);
+    if (e.target.checked) setTermsError("");
+  };
+
   return (
     <div className="app">
       <h1>REGISTRATION FORM</h1>
@@ -167,8 +174,15 @@ function App() {
       onBlur = {(e) => validateField("confirmPassword",e.target.value)}/>
       <span className="error">{errors.confirmPassword}</span>
 
-      <button type="submit">Submit</button>
- </form>
+       <div className="input-container">
+          <label><input type="checkbox" checked={termsAccepted} onChange={handleTermsChange}/>{" "}
+            I accept the <a href="#">Terms and Conditions</a> <span className="required">*</span>
+          </label>
+          <span className="error">{termsError}</span>
+        </div>
+
+        <button type="submit">Submit</button>
+      </form>
 
     </div>
   );
